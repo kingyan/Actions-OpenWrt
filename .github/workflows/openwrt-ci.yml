@@ -78,7 +78,7 @@ jobs:
         ../$DIY_SH
         make defconfig
 
-    - name: SSH connection to Actions
+    - name: SSH connection
       uses: P3TERX/debugger-action@master
       if: env.SSH_ACTIONS == 'true'
 
