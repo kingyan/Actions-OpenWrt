@@ -9,17 +9,17 @@ name: OpenWrt-CI
 
 on:
   repository_dispatch:
-  push:
-    branches:
-      - master
-    paths:
-      - 'diy-part2.sh'
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - 'diy-part2.sh'
 #  schedule:
 #    - cron: 0 8 * * 5
 #  release:
 #    types: published
-#  watch:
-#    types: started
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
