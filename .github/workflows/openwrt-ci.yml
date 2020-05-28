@@ -78,10 +78,6 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: SSH connection to actions
-      uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
-
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
@@ -89,6 +85,10 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+
+    - name: SSH connection to actions
+      uses: P3TERX/debugger-action@master
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: Download package
       id: package
