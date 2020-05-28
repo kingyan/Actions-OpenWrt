@@ -23,4 +23,4 @@ sed -i 's/luci-app-zerotier luci-app-xlnetacc/open-vm-tools/g' target/linux/x86/
 sed -i '/samba.lua/ s/^/#/g' package/lean/default-settings/files/zzz-default-settings
 
 # 替换匹配下一行
-sed -i '/Include ShadowsocksR Server/{n;s/y if i386||x86_64||arm||aarch64/n/g}' package/lean/luci-app-ssr-plus/Makefile
+#sed -i '/Include ShadowsocksR Server/{n;s/y if i386||x86_64||arm||aarch64/n/g}' package/lean/luci-app-ssr-plus/Makefile
