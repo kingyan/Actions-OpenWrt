@@ -12,7 +12,7 @@
 sed -i 's/192.168.1.1/192.168.1.3/g' package/base-files/files/bin/config_generate
 
 # 删除APP
-sed -i 's/-app-filetransfer luci-app-vsftpd luci-/-/g' include/target.mk
+sed -i 's/filetransfer luci-app-vsftpd/bridge/g' include/target.mk
 sed -i 's/-app-pptp-server luci-/-/g' include/target.mk
 sed -i 's/-app-nlbwmon luci-/-/g' include/target.mk
 sed -i 's/-app-zerotier luci-app-ipsec-vpnd luci-app-pptp-server luci-/-/g' target/linux/x86/Makefile
