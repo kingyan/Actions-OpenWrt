@@ -28,7 +28,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -82,8 +82,13 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e luci-app-bridge.tar.gz ] && mv luci-app-bridge.tar.gz openwrt/luci-app-bridge.tar.gz
         chmod +x $DIY_P2_SH
         cd openwrt
+        tar -zxvf luci-app-bridge.tar.gz -C ./feeds/luci/applications
+        pushd ./package/feeds/luci
+        ln -s ../../../feeds/luci/applications/luci-app-bridge luci-app-bridge
+        popd
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to actions
