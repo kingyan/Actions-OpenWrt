@@ -5,7 +5,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 # Lisence: MIT
 # Author: KingYan P3TERX
-# Build 2020-05-27 15:47
 #============================================================
 
 # 替换默认IP
