@@ -12,12 +12,11 @@
 sed -i 's/192.168.1.1/192.168.1.3/g' package/base-files/files/bin/config_generate
 
 # 删除APP
-sed -i 's/filetransfer luci-app-vsftpd/bridge/g' include/target.mk
-sed -i 's/-app-pptp-server luci-/-/g' include/target.mk
-sed -i 's/-app-nlbwmon luci-/-/g' include/target.mk
-sed -i 's/-app-zerotier luci-app-ipsec-vpnd luci-app-pptp-server luci-/-/g' target/linux/x86/Makefile
-sed -i 's/-app-qbittorrent luci-/-/g' target/linux/x86/Makefile
-sed -i 's/luci-app-zerotier luci-app-xlnetacc/open-vm-tools/g' target/linux/x86/Makefile
+sed -i '/luci-app-filetransfer/d' include/target.mk
+sed -i 's/nlbwmon/ssr-plus/g' include/target.mk
+sed -i 's/luci-app-ipsec-vpnd/open-vm-tools/g' target/linux/x86/Makefile
+sed -i 's/luci-app-unblockmusic luci-app-zerotier luci-app-xlnetacc //g' target/linux/x86/Makefile
+sed -i '/luci-app-airplay2/d' target/linux/x86/Makefile
 
 # 注释匹配行
 sed -i '/samba.lua/ s/^/#/g' package/lean/default-settings/files/zzz-default-settings
