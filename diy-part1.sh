@@ -5,7 +5,6 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 # Lisence: MIT
 # Author: KingYan P3TERX
-# Build 2020-05-27 15:20
 #=============================================================
 
 # Uncomment a feed source
