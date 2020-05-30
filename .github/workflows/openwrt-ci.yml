@@ -85,10 +85,6 @@ jobs:
         [ -e luci-app-bridge.tar.gz ] && mv luci-app-bridge.tar.gz openwrt/luci-app-bridge.tar.gz
         chmod +x $DIY_P2_SH
         cd openwrt
-        #tar -zxvf luci-app-bridge.tar.gz -C ./feeds/luci/applications
-        #pushd ./package/feeds/luci
-        #ln -s ../../../feeds/luci/applications/luci-app-bridge luci-app-bridge
-        #popd
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to actions
