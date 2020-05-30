@@ -15,6 +15,7 @@ sed -i '/luci-app-filetransfer/d' include/target.mk
 sed -i 's/nlbwmon/ssr-plus/g' include/target.mk
 sed -i 's/luci-app-ipsec-vpnd/open-vm-tools/g' target/linux/x86/Makefile
 sed -i 's/luci-app-unblockmusic luci-app-zerotier luci-app-xlnetacc //g' target/linux/x86/Makefile
+#sed -i 's/unblockmusic luci-app-zerotier luci-app-xlnetacc/bridge/g' target/linux/x86/Makefile
 sed -i '/luci-app-airplay2/d' target/linux/x86/Makefile
 
 # 注释匹配行
